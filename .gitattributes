@@ -1,0 +1,11 @@
+# Auto-detect text files and normalize line endings to LF on commit
+* text=auto
+
+# Force specific files to use LF
+*.java text eol=lf
+*.yml text eol=lf
+*.properties text eol=lf
+*.sh text eol=lf
+
+# Force Windows batch files to use CRLF
+*.cmd text eol=crlf
