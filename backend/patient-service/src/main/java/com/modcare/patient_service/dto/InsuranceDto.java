@@ -1,20 +1,40 @@
-package com.modcare.patient_service.model;
+package com.modcare.patient_service.dto;
 
-public class Insurance {
+public class InsuranceDto {
 	
+	private Long insuranceId;
+	private Long patientId;
 	private String provider;
 	private String policyNumber;
 	private String coverageType;
 	private String expiryDate;
 	
-    public Insurance() {}
+    public InsuranceDto() {}
 
-	public Insurance(String provider, String policyNumber, String coverageType, String expiryDate) {
+	public InsuranceDto(Long insuranceId,Long patientId, String provider, String policyNumber, String coverageType, String expiryDate) {
 		super();
+		this.insuranceId = insuranceId;
+		this.patientId=patientId;
 		this.provider = provider;
 		this.policyNumber = policyNumber;
 		this.coverageType = coverageType;
 		this.expiryDate = expiryDate;
+	}
+	
+	public Long getPatientId() {
+		return patientId;
+	}
+	
+	public void setPatientId(Long patientId) {
+		this.patientId=patientId;
+	}
+
+	public Long getInsuranceId() {
+		return insuranceId;
+	}
+
+	public void setInsuranceId(Long insuranceId) {
+		this.insuranceId = insuranceId;
 	}
 
 	public String getProvider() {
@@ -51,12 +71,9 @@ public class Insurance {
 
 	@Override
 	public String toString() {
-		return "Insurance [provider=" + provider + ", policyNumber=" + policyNumber + ", coverageType=" + coverageType
-				+ ", expiryDate=" + expiryDate + "]";
+		return "Insurance [insuranceId=" + insuranceId + ", provider=" + provider + ", policyNumber=" + policyNumber
+				+ ", coverageType=" + coverageType + ", expiryDate=" + expiryDate + "]";
 	}
-    
-    
-	
-	
+
 
 }
